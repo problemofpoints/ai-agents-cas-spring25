@@ -1,0 +1,124 @@
+---
+title: "AI-Empowered Actuaries: An Introduction to AI Agents"
+subtitle: ""
+author: "Adam Troyer, Lockton Re"
+---
+
+## Year of the Agent: 2025
+
+- 2025 = The "Year of the Agent"
+- Explosion in agent-based apps
+- New AI workflows emerging rapidly
+- What we’ll cover vs. what we won’t
+
+![agent-headlines-placeholder](images/headlines.png)
+
+# What is an Agent? {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
+
+## vs. LLMs and Workflows
+
+- LLM: one-shot input/output
+- Agent: **plans**, **uses tools**, **remembers**, **loops**
+- Think → Act → Observe → Reflect
+
+![agent-loop-diagram](images/agent-loop.png)
+
+---
+
+## Anatomy of an Agent
+
+- **Planner**: decides next step
+- **Tool use**: external APIs, Python, web search
+- **Memory**: long-term recall
+- **State**: tracks evolving context
+
+::: aside
+Key takeaway from this slide...
+:::
+---
+
+## Example Agents
+
+### Coding, Research, Reasoning
+
+- GPT Researcher ^[[GPTResearcher.com](https://gptresearcher.com/)]
+- Coding copilots 
+- Manus.ai ^[[Manus.ai](https://manus.ai/)]
+- LangGraph chains (multi-step workflows) ^[[LangGraph](https://langgraph.dev/)]
+
+![agent-examples](images/examples.png)
+
+## How Agents Work (LangGraph Example)
+
+```python
+from langgraph.graph import StateGraph
+from langgraph.graph.message import add_messages
+from my_tools import analyze_triangle
+
+workflow = StateGraph(state_type=dict)
+workflow.add_node("analyze", analyze_triangle)
+workflow.set_entry_point("analyze")
+graph = workflow.compile()
+graph.invoke({"triangle": triangle_data})
+```
+
+- Define nodes for tools, memory, reflection
+- Add edges to define the loop
+
+## Potential Benefits for Actuaries
+
+- Faster workflows
+- Tools + LLMs = better automation
+- More transparency and judgment
+- Memory for context across steps
+
+![actuary-workflow](images/actuary-workflow.png)
+
+# Actuarial Example: Reserving Agent {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
+
+## Reserving Agent
+- Uses Chainladder in Python
+- Runs diagnostics
+- Summarizes reserve indications
+- Writes human-readable report
+
+```python
+def run_diagnostics(data):
+    triangle = ChainladderTriangle(data)
+    diagnostics = triangle.diagnostics()
+    return diagnostics.summary()
+```
+
+---
+
+## Placeholder Screenshot of Agent in Action
+
+![agent-demo-placeholder](images/reserving-agent-screenshot.png)
+
+---
+
+## Build Your Own
+
+- LangGraph is modular and open-source
+- Colab notebooks provided
+- Start with:
+  - Planning
+  - Tool execution
+  - Output formatting
+
+---
+
+## Wrap-Up
+
+- Agents = workflows + reasoning
+- Use tools and memory to extend LLMs
+- Actuaries can start experimenting today!
+
+---
+
+## Links and Resources
+
+- [LangGraph Docs](https://langgraph.dev/)
+- [Manus.ai](https://manus.ai/)
+- [GitHub Repo](https://github.com/langchain-ai/langgraph)
+- [Colab Notebook](https://colab.research.google.com/)

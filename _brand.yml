@@ -1,0 +1,29 @@
+color:
+  palette:
+    # Primary colors
+    black: "#000000"          # RGB: 0,0,0 | CMYK: 0,0,0,100
+    white: "#FFFFFF"          # RGB: 255,255,255 | CMYK: 0,0,0,0
+    lockton-blue: "#00a0e1"   # RGB: 0,160,225 | CMYK: 90,7,0,0
+    
+    # Secondary colors
+    green: "#00A13A"          # RGB: 0,200,58 | CMYK: 85,0,100,0
+    yellow: "#FFE200"         # RGB: 255,255,0 | CMYK: 0,0,100,0
+    orange: "#EB5F0A"         # RGB: 255,94,20 | CMYK: 0,71,100,0
+    red: "#E3051B"            # RGB: 227,13,26 | CMYK: 0,100,95,0
+    pink: "#E8327C"           # RGB: 232,50,124 | CMYK: 0,50,50,0
+    dark-gray: "#687074"
+    light-gray: "#F3F3F2"
+
+  # Default color settings
+  background: light-gray
+  foreground: black
+  primary: lockton-blue
+
+typography:
+  fonts:
+    - family: Noto Sans
+      source: google
+    - family: Open Sans
+      source: google
+  base: Noto Sans
+  headings: Noto Sans

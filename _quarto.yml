@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "images/"
+  render:
+    - "index.qmd"
+  
+# Presentation defaults
+format:
+  revealjs:
+    brand: _brand.yml
+    theme: styles.scss
+    slide-number: true
+    chalkboard: false
+    footer: "AI-Empowered Actuaries: An Introduction to AI Agents | CAS Spring Meeting 2025"
+    highlight-style: a11y
+    code-link: true
+    margin: 0.05
+    transition: none
+    background-transition: none
+    title-slide-attributes:
+      data-background-color: black
+      data-background-image: images/locktonre-title-slide-background.png
+      data-background-size: cover
+      data-background-position: center
+      data-footer: false
+    
+# Custom colors using CAS blue
+execute:
+  echo: true
+  
+# Resources
+bibliography: references.bib

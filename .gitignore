@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+.windsurfrules
+/.quarto/
+/docs/
+.DS_Store
+/_site/
+/index_files/
+*_files/

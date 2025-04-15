@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+
+// Define SCSS color variables with direct color values
+$lockton-blue: #00AEEF;
+$lockton-green: #00A13A;
+$lockton-yellow: #FFE200;
+$lockton-orange: #EB5F0A;
+$lockton-red: #E3051B;
+$lockton-pink: #E8327C;
+$lockton-dark-gray: #687074;
+$lockton-light-gray: #F3F3F2;
+$lockton-light-blue: rgba(77, 198, 244, 1); // 30% lighter version of #00AEEF
+
+// Set presentation variables using SCSS variables
+$presentation-font-size-root: 30px !default;
+$presentation-heading-color: $lockton-blue !default;
+$presentation-heading-text-shadow: none !default;
+$presentation-heading-text-transform: none !default;
+$body-bg: $lockton-light-gray !default;
+$link-color: $lockton-light-blue !default;
+$selection-bg: rgba(0, 0, 0, 0.99) !default;
+
+$overlayElementBgColor: 0, 0, 0 !default;
+$overlayElementFgColor: 240, 240, 240 !default;
+
+// Change text colors against dark slide backgrounds
+$dark-bg-text-color: #fff !default;
+
+// Set title slide alignment
+$presentation-title-slide-text-align: left;
+
+/*-- scss:rules --*/
+
+// Define CSS variables for use in the rendered HTML
+:root {
+  --lockton-blue: #{$lockton-blue};
+  --lockton-green: #{$lockton-green};
+  --lockton-yellow: #{$lockton-yellow};
+  --lockton-orange: #{$lockton-orange};
+  --lockton-red: #{$lockton-red};
+  --lockton-pink: #{$lockton-pink};
+  --lockton-dark-gray: #{$lockton-dark-gray};
+  --lockton-light-gray: #{$lockton-light-gray};
+}
