@@ -11,9 +11,10 @@ format:
   revealjs:
     brand: _brand.yml
     theme: styles.scss
+    css: card-styles.css
     slide-number: true
     chalkboard: false
-    footer: "AI-Empowered Actuaries: An Introduction to AI Agents | CAS Spring Meeting 2025"
+    footer: "" #"AI-Empowered Actuaries: An Introduction to AI Agents | CAS Spring Meeting 2025"
     highlight-style: a11y
     code-link: true
     margin: 0.05

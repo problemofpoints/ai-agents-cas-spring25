@@ -1,0 +1,50 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 0.0rem;
+}
+.card {
+  width: 42%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+.card blockquote {
+  margin: 0.2rem 0;
+  padding: 0;
+  font-style: italic;
+  color: #444;
+  border-left: 3px solid #ccc;
+  padding-left: 0.6rem;
+}
+.card img {
+  height: 64px;
+  width: auto;
+  margin-bottom: 0.5rem;
+}
+.card a {
+  color: #00AEEF;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.card a:hover {
+  text-decoration: underline;
+}
+.zoom-focus {
+  width: 80%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  font-size: 1.75rem;
+  line-height: 1.5;
+}

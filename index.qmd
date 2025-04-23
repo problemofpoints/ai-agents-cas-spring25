@@ -4,14 +4,91 @@ subtitle: ""
 author: "Adam Troyer, Lockton Re"
 ---
 
-## Year of the Agent: 2025
+## 2025: Year of the Agent
 
-- 2025 = The "Year of the Agent"
-- Explosion in agent-based apps
-- New AI workflows emerging rapidly
-- What we’ll cover vs. what we won’t
+::: {.card .zoom-focus .fragment .fade-in-left}
+![](images/Time_Magazine_logo.svg.png)  
+**<span style="font-size: 1.5em">5 Predictions for AI in 2025</span>**  
+January 16, 2025
 
-![agent-headlines-placeholder](images/headlines.png)
+> “In 2025, we’ll begin to see a shift from chatbots and image generators toward 'agentic' systems that can act autonomously to complete tasks.”  
+[Read more →](https://time.com/7204665/ai-predictions-2025/)
+:::
+
+## 2025: Year of the Agent
+
+::: {.card .zoom-focus .fragment .fade-in-left}
+![](images/The_Guardian_2018.svg.png)         
+**<span style="font-size: 1.5em">How will AI reshape 2025?</span>**  
+December 28, 2024
+
+> “If 2024 was the year of large language models (LLMs), then 2025 looks like the year of AI “agents”.”  
+[Read more →](https://www.theguardian.com/commentisfree/2024/dec/28/llms-large-language-models-gen-ai-agents-spreadsheets-corporations-work)
+:::
+
+## 2025: Year of the Agent
+
+::: {.card .zoom-focus .fragment .fade-in-left}
+![](images/Salesforce-logo.png)  
+**<span style="font-size: 1.5em">What’s Next for the Agentic Era?</span>**  
+December 16, 2024
+
+> “AI agents are poised to revolutionize search, moving beyond simply finding information to completing complex tasks.”  
+[Read more →](https://www.salesforce.com/news/stories/future-of-ai-agents-2025/)
+:::
+
+## 2025: Year of the Agent
+
+::: {.card .zoom-focus .fragment .fade-in-left}
+![](images/IBM_logo.svg)  
+**<span style="font-size: 1.5em">AI Agents in 2025</span>**  
+March 4, 2025
+
+> “It’s impossible to take two steps across the tech media landscape without stumbling over an article hailing 2025 as the year of the AI agent.”  
+[Read more →](https://www.ibm.com/think/insights/ai-agents-2025-expectations-vs-reality)
+:::
+
+## Year of the Agent - It has to be true!!
+
+::: {.card-container}
+
+::: {.card}
+![](images/Time_Magazine_logo.svg.png)  
+**<span style="font-size: 1.5em">5 Predictions for AI in 2025</span>**  
+January 16, 2025
+
+> “In 2025, we’ll begin to see a shift from chatbots and image generators toward 'agentic' systems that can act autonomously to complete tasks.”  
+[Read more →](https://time.com/7204665/ai-predictions-2025/)
+:::
+
+::: {.card}
+![](images/The_Guardian_2018.svg.png)         
+**<span style="font-size: 1.5em">How will AI reshape 2025?</span>**  
+December 28, 2024
+
+> “If 2024 was the year of large language models (LLMs), then 2025 looks like the year of AI “agents”.”  
+[Read more →](https://www.theguardian.com/commentisfree/2024/dec/28/llms-large-language-models-gen-ai-agents-spreadsheets-corporations-work)
+:::
+
+::: {.card}
+![](images/Salesforce-logo.png)  
+**<span style="font-size: 1.5em">What’s Next for the Agentic Era?</span>**  
+December 16, 2024
+
+> “AI agents are poised to revolutionize search, moving beyond simply finding information to completing complex tasks.”  
+[Read more →](https://www.salesforce.com/news/stories/future-of-ai-agents-2025/)
+:::
+
+::: {.card}
+![](images/IBM_logo.svg)  
+**<span style="font-size: 1.5em">AI Agents in 2025</span>**  
+March 4, 2025
+
+> “It’s impossible to take two steps across the tech media landscape without stumbling over an article hailing 2025 as the year of the AI agent.”  
+[Read more →](https://www.ibm.com/think/insights/ai-agents-2025-expectations-vs-reality)
+:::
+:::
+
 
 # What is an Agent? {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
 
