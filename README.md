@@ -65,3 +65,12 @@ The presentation uses the CAS blue color (#00AEEF) for visual elements.
 - [LangGraph Documentation](https://langgraph.dev/)
 - [Quarto reveal.js Documentation](https://quarto.org/docs/presentations/revealjs/)
 - [Chainladder Package](https://chainladder-python.readthedocs.io/)
+
+## Notes
+
+[WSJ article - AI Agents Are a Moment of Truth for Tech](https://www.wsj.com/articles/ai-agents-are-a-moment-of-truth-for-tech-8ac5365a)
+
+- Both workflows and agents
+- Use LLMs to do stuff
+- Workflows: LLMs follow predefined paths
+- Agents: LLMs dynamically direct

@@ -4,9 +4,31 @@ subtitle: ""
 author: "Adam Troyer, Lockton Re"
 ---
 
+## Disclaimer
+
+
+## Agenda
+
+:::{.incremental}
+- 2025: Year of the Agent
+- What is an Agent?
+- Actuarial Example: Reserving Agent
+:::
+
 ## 2025: Year of the Agent
 
-::: {.card .zoom-focus .fragment .fade-in-left}
+:::: {.columns}
+::: {.column width="50%"}
+![](images/scary-agent.png){.fragment .fade-in}
+:::
+::: {.column width="50%"}
+![](images/friendly-agent.png){.fragment .fade-in}
+:::
+::::
+
+## 2025: Year of the Agent
+
+::: {.card .zoom-focus .fragment}
 ![](images/Time_Magazine_logo.svg.png)  
 **<span style="font-size: 1.5em">5 Predictions for AI in 2025</span>**  
 January 16, 2025
@@ -17,7 +39,7 @@ January 16, 2025
 
 ## 2025: Year of the Agent
 
-::: {.card .zoom-focus .fragment .fade-in-left}
+::: {.card .zoom-focus}
 ![](images/The_Guardian_2018.svg.png)         
 **<span style="font-size: 1.5em">How will AI reshape 2025?</span>**  
 December 28, 2024
@@ -28,7 +50,7 @@ December 28, 2024
 
 ## 2025: Year of the Agent
 
-::: {.card .zoom-focus .fragment .fade-in-left}
+::: {.card .zoom-focus}
 ![](images/Salesforce-logo.png)  
 **<span style="font-size: 1.5em">What’s Next for the Agentic Era?</span>**  
 December 16, 2024
@@ -39,7 +61,7 @@ December 16, 2024
 
 ## 2025: Year of the Agent
 
-::: {.card .zoom-focus .fragment .fade-in-left}
+::: {.card .zoom-focus}
 ![](images/IBM_logo.svg)  
 **<span style="font-size: 1.5em">AI Agents in 2025</span>**  
 March 4, 2025
@@ -92,68 +114,269 @@ March 4, 2025
 
 # What is an Agent? {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
 
-## vs. LLMs and Workflows
+## Why do we need agents?
 
-- LLM: one-shot input/output
-- Agent: **plans**, **uses tools**, **remembers**, **loops**
-- Think → Act → Observe → Reflect
+<br> 
 
-![agent-loop-diagram](images/agent-loop.png)
+:::: {.r-stack}
+![](images/llm-slide-1.png){.fragment .current-visible fragment-index=0}
+
+![](images/llm-slide-2.png){.fragment .current-visible fragment-index=1}
+
+![](images/llm-slide-3.png){.fragment .current-visible fragment-index=2}
+
+![](images/llm-slide-4.png){.fragment .current-visible fragment-index=3}
+
+![](images/llm-slide-5.png){.fragment .current-visible fragment-index=4}
+
+![](images/llm-slide-6.png){.fragment .current-visible fragment-index=5}
+
+![](images/llm-slide-7.png){.fragment .current-visible fragment-index=6}
+::::
 
 ---
 
-## Anatomy of an Agent
+## OpenAI definition 
 
-- **Planner**: decides next step
-- **Tool use**: external APIs, Python, web search
-- **Memory**: long-term recall
-- **State**: tracks evolving context
+<br>
 
-::: aside
-Key takeaway from this slide...
+![](images/openai-agent-definition.png){.border .rounded}
+
+::: {.fragment}
+::: {.shadow-box}
+> Applications that integrate LLMs but don't use them to control workflow execution—think simple
+chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 :::
+
+<p style="font-size: 0.7em; text-align: right; color: #687074;">Source: <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" style="color: #00AEEF;">A practical guide to building agents</a></p>
+:::
+
 ---
 
-## Example Agents
+## Anthropic definition
+<br>
+
+### **Agentic Systems**
+
+::: {.fragment}
+::: {.shadow-box}
+> **Workflows** are systems where LLMs and tools are orchestrated through predefined code paths.
+:::
+:::
+
+::: {.fragment}
+::: {.shadow-box}
+> **Agents**, on the other hand, are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+:::
+
+<p style="font-size: 0.7em; text-align: right; color: #687074;">Source: <a href="https://www.anthropic.com/engineering/building-effective-agents" style="color: #00AEEF;">Building Effective Agents</a></p>
+:::
+
+---
+
+## What is an ~~agent~~ agentic system?
+### My definition - in scribbles
+
+:::: {.r-stack style="width: 90%; margin: 0 auto;"}
+![](images/Agent-1.png){.fragment .current-visible fragment-index=0}
+
+![](images/Agent-2.png){.fragment .current-visible fragment-index=1}
+
+![](images/Agent-3.png){.fragment .current-visible fragment-index=2}
+
+![](images/Agent-4.png){.fragment .current-visible fragment-index=3}
+
+![](images/Agent-5.png){.fragment .current-visible fragment-index=4}
+
+![](images/Agent-6.png){.fragment .current-visible fragment-index=5}
+
+![](images/Agent-7.png){.fragment .current-visible fragment-index=6}
+
+![](images/Agent-8.png){.fragment .current-visible fragment-index=7}
+
+![](images/Agent-9.png){.fragment .current-visible fragment-index=8}
+::::
+
+---
+
+## Multi-agent Systems
+<br>
+
+:::: {.r-stack style="width: 90%; margin: 0 auto;"}
+![](images/Multi-agent.png){.fragment .current-visible fragment-index=0}
+::::
+
+---
+
+## Why agents? 
+### Benefits vs traditional workflow automation
+
+::: {.shadow-box style="width: 70%; margin: 0 auto;"}
+![](images/agents-vs-rpa.png){.border .rounded}
+:::
+
+---
+
+## Why **NOT** agents? 
+<br>
+
+::: {.incremental}
+- Complicated!
+- Latency/speed vs. cost
+- Find simplest solution possible
+:::
+
+<br>
+
+::: {.fragment}
+::: {.shadow-box}
+> For many applications, however, optimizing single LLM calls with retrieval and in-context examples is usually enough.
+:::
+
+<p style="font-size: 0.7em; text-align: right; color: #687074;">Source: <a href="https://www.anthropic.com/engineering/building-effective-agents" style="color: #00AEEF;">Building Effective Agents</a></p>
+:::
+
+---
+
+## Simple Example
+
+```{python}
+#| echo: false
+#| output: false
+import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+```
+
+```{python}
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: "|12|5-7,9,13|14|"
+from langchain_tavily import TavilySearch
+from langgraph.prebuilt import create_react_agent
+from IPython.display import Image, display
+
+def multiply(a: int, b: int) -> int:
+    """Multiply two numbers."""
+    return a * b
+
+tavily_search_tool = TavilySearch(max_results=1)
+
+agent = create_react_agent(
+    model="openai:gpt-4.1",  
+    tools=[multiply, tavily_search_tool],  
+    prompt="You are a helpful assistant that speaks like a pirate."
+)
+
+display(Image(agent.get_graph().draw_mermaid_png()))
+```
+
+---
+
+## Simple Example - Output
+
+```{python}
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: "|1|4-6"
+user_input = "Multiply the Timberwolves and Lakers score from Game 5."
+
+final_answer = None
+for step in agent.stream({"messages": [{"role": "user", "content": user_input}]}, stream_mode="values"):
+    final_answer = step["messages"][-1].content
+    step["messages"][-1].pretty_print()
+```
+
+---
+
+## Simple Example - Final Answer
+<br>
+
+:::{.fragment}
+:::{.shadow-box}
+> **Question:** `{python} user_input`
+:::
+:::
+
+:::{.fragment}
+:::{.shadow-box}
+> **Answer:** `{python} final_answer`
+:::
+:::
+
+---
+
+## Example agents in the wild
 
 ### Coding, Research, Reasoning
 
 - GPT Researcher ^[[GPTResearcher.com](https://gptresearcher.com/)]
 - Coding copilots 
 - Manus.ai ^[[Manus.ai](https://manus.ai/)]
-- LangGraph chains (multi-step workflows) ^[[LangGraph](https://langgraph.dev/)]
 
-![agent-examples](images/examples.png)
-
-## How Agents Work (LangGraph Example)
-
-```python
-from langgraph.graph import StateGraph
-from langgraph.graph.message import add_messages
-from my_tools import analyze_triangle
-
-workflow = StateGraph(state_type=dict)
-workflow.add_node("analyze", analyze_triangle)
-workflow.set_entry_point("analyze")
-graph = workflow.compile()
-graph.invoke({"triangle": triangle_data})
-```
-
-- Define nodes for tools, memory, reflection
-- Add edges to define the loop
-
-## Potential Benefits for Actuaries
-
-- Faster workflows
-- Tools + LLMs = better automation
-- More transparency and judgment
-- Memory for context across steps
-
-![actuary-workflow](images/actuary-workflow.png)
 
 # Actuarial Example: Reserving Agent {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
 
+## The motivation
+
+```{python}
+#| echo: true
+#| code-line-numbers: "|5-6|11,17|8|22-24"
+import chainladder as cl
+
+triangle = cl.load_sample('raa')
+
+prompt = f"""You are a P&C loss reserving actuary. Only return the final answer in sentence form.
+             Here is the loss triangle for you to work with: {triangle.to_json()}"""
+
+request = "What is the standard chain ladder loss reserve estimate for this triangle?"
+
+agent_old = create_react_agent(
+    model="openai:gpt-4o",
+    tools = [],  
+    prompt=prompt
+)
+
+agent_new = create_react_agent(
+    model="openai:gpt-4.1",
+    tools = [],  
+    prompt=prompt
+)
+
+response_old = agent_old.invoke({"messages": [{"role": "user", "content": request}]})
+response_new = agent_new.invoke({"messages": [{"role": "user", "content": request}]})
+response_actual = cl.Chainladder().fit(triangle)
+```
+
+---
+
+## The motivation
+<br>
+
+:::{.column .fragment}
+### OpenAI's gpt-4o
+`{python} response_old['messages'][1].content`
+:::
+
+:::{.column .fragment}
+### OpenAI's gpt-4.1
+`{python} response_new['messages'][1].content`
+:::
+
+<br>
+
+:::{.fragment}
+### python-chainladder
+`{python} f"${int(response_actual.ibnr_.sum()):,}"`
+:::
+
+### 😔 😔 😭 😭   {.fragment}
+
+---
+
 ## Reserving Agent
+
 - Uses Chainladder in Python
 - Runs diagnostics
 - Summarizes reserve indications
@@ -170,32 +393,62 @@ def run_diagnostics(data):
 
 ## Placeholder Screenshot of Agent in Action
 
-![agent-demo-placeholder](images/reserving-agent-screenshot.png)
+Screenshot of app
 
 ---
 
-## Build Your Own
+## Where I'm using agents / agentic systems
+<br>
 
-- LangGraph is modular and open-source
-- Colab notebooks provided
-- Start with:
-  - Planning
-  - Tool execution
-  - Output formatting
+:::{.column .fragment .incremental}
+### Present
+- Chatting with US Statutory data - chart creation
+- Earnings call chat and summaries
+- Company research reports
+- Document extraction (rate filings, etc.)
+:::
+
+:::{.column .fragment .incremental}
+### Future
+- Reinsurance experience / exposure analysis
+- Reinsurance structuring
+- Automated workflows
+:::
 
 ---
 
-## Wrap-Up
+## Conclusion - Is 2025 the Year of the Agent??
+<br>
 
-- Agents = workflows + reasoning
-- Use tools and memory to extend LLMs
-- Actuaries can start experimenting today!
+:::{.column .fragment}
+### What can you do?
 
----
+:::{.incremental}
+- Use LLMs / agents in personal life
+- Read about agents
+- Start experimenting
+:::
 
-## Links and Resources
+:::{.fragment}
+### Links and Resources
 
+- [Anthropic - Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+- [OpenAI on Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)
 - [LangGraph Docs](https://langgraph.dev/)
 - [Manus.ai](https://manus.ai/)
-- [GitHub Repo](https://github.com/langchain-ai/langgraph)
-- [Colab Notebook](https://colab.research.google.com/)
+:::
+:::
+
+:::{.column .fragment}
+![](images/friendly-agent.png){.fragment .fade-in}
+:::
+
+---
+
+## Contact Info
+<br>
+
+- Link to presentation
+- Link to GitHub repo
+- Link to app
+- Link to app GitHub repo

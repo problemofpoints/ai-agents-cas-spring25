@@ -1,0 +1,33 @@
+/* Column layout styling */
+.columns {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.column img {
+  max-width: 90%;
+  max-height: 60vh;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Ensure the Lockton blue color is used for any links or highlights */
+.column a {
+  color: #00AEEF;
+  text-decoration: none;
+}
+
+.column a:hover {
+  text-decoration: underline;
+}
