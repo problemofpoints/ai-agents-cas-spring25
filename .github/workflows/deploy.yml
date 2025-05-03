@@ -32,6 +32,9 @@ jobs:
     - name: Render Quarto Project
       run: |
         quarto render
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v2.0
