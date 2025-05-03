@@ -248,9 +248,15 @@ chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 #| echo: false
 #| output: false
 import os
-from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
+# Try to load from .env file if it exists (for local development)
+try:
+    from dotenv import load_dotenv, find_dotenv
+    load_dotenv(find_dotenv(raise_error_if_not_found=False))
+except ImportError:
+    pass  # Continue without dotenv if not available
+
+tavily_api_key = os.getenv("TAVILY_API_KEY")
 ```
 
 ```{python}
@@ -265,10 +271,10 @@ def multiply(a: int, b: int) -> int:
     """Multiply two numbers."""
     return a * b
 
-tavily_search_tool = TavilySearch(max_results=1)
+tavily_search_tool = TavilySearch(max_results=1, api_key=tavily_api_key)
 
 agent = create_react_agent(
-    model="openai:gpt-4.1",  
+    model="openai:gpt-4.1",
     tools=[multiply, tavily_search_tool],  
     prompt="You are a helpful assistant that speaks like a pirate."
 )
@@ -389,6 +395,9 @@ prompt = f"""You are a P&C loss reserving actuary. Only return the final answer 
 
 request = "What is the standard chain ladder loss reserve estimate for this triangle?"
 
+# Ensure we have the OpenAI API key from environment variables
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
 agent_old = create_react_agent(
     model="openai:gpt-4o",
     tools = [],  
@@ -436,7 +445,6 @@ response_actual = cl.Chainladder().fit(triangle)
 
 <br>
 <br>
-<br>
 
 :::{.fragment}
 ### OpenAI's o3
@@ -472,27 +480,39 @@ Screenshot of app
 ## Where I'm using agents / agentic systems
 <br>
 
-:::{.column .fragment .incremental}
+:::: {.columns}
+::: {.column width="50%"}
+:::{.fragment}
 ### Present
+:::{.incremental}
 - Chatting with US Statutory data
 - Earnings call chat and summaries
 - Company research reports
 - Document extraction (rate filings, etc.)
 :::
+:::
+:::
 
-:::{.column .fragment .incremental}
+::: {.column width="50%"}
+:::{.fragment}
 ### Future
+:::{.incremental}
 - Reinsurance experience / exposure analysis
 - Reinsurance structuring
 - Automated workflows
 :::
+:::
+:::
+::::
 
 ---
 
 ## Conclusion - Is 2025 the Year of the Agent??
 <br>
 
-:::{.column .fragment}
+:::: {.columns}
+::: {.column width="60%"}
+:::{.fragment}
 ### What can you do?
 
 :::{.incremental}
@@ -510,9 +530,12 @@ Screenshot of app
 :::
 :::
 
-:::{.column .fragment}
+::: {.column width="40%"}
+:::{.fragment}
 ![](images/friendly-agent.png){.fragment .fade-in}
 :::
+:::
+::::
 
 ---
 
