@@ -271,7 +271,7 @@ def multiply(a: int, b: int) -> int:
     """Multiply two numbers."""
     return a * b
 
-tavily_search_tool = TavilySearch(max_results=1, api_key=tavily_api_key)
+tavily_search_tool = TavilySearch(max_results=1, tavily_api_key=tavily_api_key)
 
 agent = create_react_agent(
     model="openai:gpt-4.1",
@@ -395,9 +395,6 @@ prompt = f"""You are a P&C loss reserving actuary. Only return the final answer 
 
 request = "What is the standard chain ladder loss reserve estimate for this triangle?"
 
-# Ensure we have the OpenAI API key from environment variables
-openai_api_key = os.getenv("OPENAI_API_KEY")
-
 agent_old = create_react_agent(
     model="openai:gpt-4o",
     tools = [],  
@@ -519,6 +516,7 @@ Screenshot of app
 - Use LLMs / agents in personal life
 - Read about agents
 - Start experimenting
+:::
 :::
 
 :::{.fragment}
