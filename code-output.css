@@ -30,7 +30,7 @@
 
 /* Reduce spacing in output */
 .reveal .cell-output pre code {
-  line-height: 0.75;
+  line-height: 1.0;
   white-space: pre-wrap;
 }
 
