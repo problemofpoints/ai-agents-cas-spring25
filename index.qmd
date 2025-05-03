@@ -4,10 +4,12 @@ subtitle: ""
 author: "Adam Troyer, Lockton Re"
 ---
 
-## Disclaimer
+---
 
+![](images/cas-antitrust-slide.png)
 
 ## Agenda
+<br>
 
 :::{.incremental}
 - 2025: Year of the Agent
@@ -199,7 +201,7 @@ chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 
 ---
 
-## Multi-agent Systems
+## Multi-agent systems
 <br>
 
 :::: {.r-stack style="width: 90%; margin: 0 auto;"}
@@ -211,8 +213,10 @@ chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 ## Why agents? 
 ### Benefits vs traditional workflow automation
 
+::: {.fragment}
 ::: {.shadow-box style="width: 70%; margin: 0 auto;"}
 ![](images/agents-vs-rpa.png){.border .rounded}
+:::
 :::
 
 ---
@@ -307,14 +311,67 @@ for step in agent.stream({"messages": [{"role": "user", "content": user_input}]}
 
 ---
 
-## Example agents in the wild
+## Currently useful agents
 
-### Coding, Research, Reasoning
+### Research agents
 
-- GPT Researcher ^[[GPTResearcher.com](https://gptresearcher.com/)]
-- Coding copilots 
-- Manus.ai ^[[Manus.ai](https://manus.ai/)]
+:::: {.columns}
+::: {.column width="30%"}
+:::{.incremental}
+- [OpenAI's Deep Research](https://openai.com/index/introducing-deep-research/)
+- [Google's Deep Research](https://blog.google/products/gemini/google-gemini-deep-research/)
+- [GPT Researcher](https://gptresearcher.com/) - Open Source
+:::
+:::
 
+::: {.column width="70%"}
+:::{.fragment style="height: 400px;"}
+<iframe src="https://player.vimeo.com/video/1052827364?h=da223fbb4f&keyboard=0&title=0&byline=0&portrait=0"
+  width="100%" height="100%" frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture"
+  allowfullscreen>
+</iframe>
+:::
+:::
+::::
+
+## Currently useful agents
+
+### Coding agents
+
+:::{.incremental}
+- [Cursor - the AI code editor](https://www.cursor.com/en)
+- [Windsurf](https://windsurf.com/editor)
+- [Claude Code](https://www.anthropic.com/claude-code)
+:::
+
+:::{.fragment}
+![](images/Cursor-tweet.png)
+:::
+
+## Currently useful agents
+
+### Generic agents
+
+:::: {.columns}
+::: {.column width="30%"}
+:::{.incremental}
+- [AutoGPT](https://agpt.co)
+- [Manus.ai](https://manus.ai/)
+- [OpenAI's o3](https://openai.com/index/introducing-o3-and-o4-mini/)
+:::
+:::
+
+::: {.column width="70%"}
+:::{.fragment style="height: 400px;"}
+<iframe src="https://player.vimeo.com/video/1076103584?h=72021e4db7&keyboard=0&title=0&byline=0&portrait=0"
+  width="100%" height="100%" frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture"
+  allowfullscreen>
+</iframe>
+:::
+:::
+::::
 
 # Actuarial Example: Reserving Agent {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
 
@@ -354,24 +411,39 @@ response_actual = cl.Chainladder().fit(triangle)
 ## The motivation
 <br>
 
-:::{.column .fragment}
+:::: {.columns}
+::: {.column width="50%"}
+:::{.fragment}
 ### OpenAI's gpt-4o
 `{python} response_old['messages'][1].content`
-:::
-
-:::{.column .fragment}
-### OpenAI's gpt-4.1
-`{python} response_new['messages'][1].content`
 :::
 
 <br>
 
 :::{.fragment}
+### OpenAI's gpt-4.1
+`{python} response_new['messages'][1].content`
+:::
+
+### 😔 😔 😭 😭   {.fragment}
+:::
+
+::: {.column width="50%"}
+:::{.fragment}
 ### python-chainladder
 `{python} f"${int(response_actual.ibnr_.sum()):,}"`
 :::
 
-### 😔 😔 😭 😭   {.fragment}
+<br>
+<br>
+<br>
+
+:::{.fragment}
+### OpenAI's o3
+Gets the correct answer, but takes ~40 seconds
+:::
+:::
+::::
 
 ---
 
@@ -402,7 +474,7 @@ Screenshot of app
 
 :::{.column .fragment .incremental}
 ### Present
-- Chatting with US Statutory data - chart creation
+- Chatting with US Statutory data
 - Earnings call chat and summaries
 - Company research reports
 - Document extraction (rate filings, etc.)
@@ -435,7 +507,6 @@ Screenshot of app
 - [Anthropic - Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
 - [OpenAI on Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)
 - [LangGraph Docs](https://langgraph.dev/)
-- [Manus.ai](https://manus.ai/)
 :::
 :::
 
@@ -448,7 +519,6 @@ Screenshot of app
 ## Contact Info
 <br>
 
-- Link to presentation
-- Link to GitHub repo
+- [Presentation GitHub repo](https://github.com/problemofpoints/ai-agents-cas-spring25)
 - Link to app
-- Link to app GitHub repo
+- [App GitHub repo](https://github.com/problemofpoints/chainladder-python-agent)

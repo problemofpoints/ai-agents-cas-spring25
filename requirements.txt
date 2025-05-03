@@ -3,10 +3,14 @@ langgraph>=0.2.67
 langchain>=0.3.0,<0.4.0
 langchain-openai>=0.3.2
 openai>=1.60.2
-langchain-tavily
+langchain-tavily>=0.1.0
+
+# Environment variables
+python-dotenv>=1.0.0
 
 # Actuarial specific packages
 chainladder>=0.8.24
+sparse==0.14.0
 
 # Visualization
 matplotlib>=3.8.0
@@ -25,3 +29,6 @@ ipywidgets>=8.0.0
 # For code examples and demos
 scikit-learn>=1.0.0
 jupyter-cache>=0.5.0
+
+# For Quarto presentation
+quarto>=0.1.0

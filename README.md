@@ -31,24 +31,33 @@ quarto check
 # Create a virtual environment
 python -m venv venv
 
-# Activate the environment
+# Activate the virtual environment
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Preview the Presentation
+### 3. Run the Presentation Locally
 
 ```bash
-quarto preview index.qmd --to revealjs
+quarto preview
 ```
 
-### 4. Build the Presentation
+## Deploying to Netlify
 
-```bash
-quarto render index.qmd --to revealjs
-```
+This presentation is configured for easy deployment to Netlify:
+
+1. Push this repository to GitHub
+2. Log in to [Netlify](https://app.netlify.com/)
+3. Click "New site from Git"
+4. Select your GitHub repository
+5. Use the following build settings:
+   - Build command: `pip install -r netlify-requirements.txt && quarto render`
+   - Publish directory: `_site`
+6. Click "Deploy site"
+
+The deployment configuration is already set up in the `netlify.toml` file.
 
 ## Project Structure
 
