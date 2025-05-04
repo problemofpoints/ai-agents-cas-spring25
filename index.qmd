@@ -201,11 +201,20 @@ chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 
 ---
 
+## What is an ~~agent~~ agentic system?
+### My definition - in scribbles
+
+:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+![](images/Agent-9.png){.border .rounded}
+::::
+
+---
+
 ## Multi-agent systems
 <br>
 
-:::: {.r-stack style="width: 90%; margin: 0 auto;"}
-![](images/Multi-agent.png){.fragment .current-visible fragment-index=0}
+:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+![](images/Multi-agent.png){.border .rounded}
 ::::
 
 ---
@@ -226,6 +235,7 @@ chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 
 ::: {.incremental}
 - Complicated!
+- Agents/LLMs are stochastic - hallucinations!!
 - Latency/speed vs. cost
 - Find simplest solution possible
 :::
@@ -346,7 +356,7 @@ for step in agent.stream({"messages": [{"role": "user", "content": user_input}]}
 ### Coding agents
 
 :::{.incremental}
-- [Cursor - the AI code editor](https://www.cursor.com/en)
+- [Cursor](https://www.cursor.com/en)
 - [Windsurf](https://windsurf.com/editor)
 - [Claude Code](https://www.anthropic.com/claude-code)
 :::
@@ -454,25 +464,65 @@ Gets the correct answer, but takes ~40 seconds
 
 ## Reserving Agent
 
-- Uses Chainladder in Python
-- Runs diagnostics
-- Summarizes reserve indications
-- Writes human-readable report
+:::{.fragment}
+A thin AI Agent on top of the Chainladder Python package. Proof of concept.
+:::
 
-```python
-def run_diagnostics(data):
-    triangle = ChainladderTriangle(data)
-    diagnostics = triangle.diagnostics()
-    return diagnostics.summary()
-```
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+:::{.fragment}
+### Toolkit
+:::{.incremental}
+- [Chainladder package](https://chainladder-python.readthedocs.io/en/latest/)
+- [Langgraph framework](https://langgraph.dev/)
+    - [Langgraph supervisor](https://github.com/langchain-ai/langgraph-supervisor-py)
+- [Gradio for the UI](https://www.gradio.app)
+- [Coded with help of Windsurf](https://windsurf.com/editor)
+:::
+:::
+:::
+
+::: {.column width="50%"}
+:::{.fragment}
+### Functionality
+:::{.incremental}
+- Perform checks on triangle data
+- Apply available reserving methods
+- Evaluate results and create a detailed report
+- Create plots to visualize
+:::
+:::
+:::
+::::
 
 ---
 
-## Placeholder Screenshot of Agent in Action
+## Agent structure
+<br>
 
-Screenshot of app
+:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+![](images/Multi-agent.png){.border .rounded}
+::::
 
 ---
+
+## Reserving Agent in Action
+
+:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+![](images/Multi-agent.png){.border .rounded}
+::::
+
+---
+
+## Reserving Agent in Action (2)
+
+:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+![](images/Multi-agent.png){.border .rounded}
+::::
+
+# Final Thoughts {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
 
 ## Where I'm using agents / agentic systems
 <br>
@@ -482,9 +532,10 @@ Screenshot of app
 :::{.fragment}
 ### Present
 :::{.incremental}
+- Coding (Windsurf)
+- Research reports (OpenAI Deep Research, GPTResearcher)
 - Chatting with US Statutory data
 - Earnings call chat and summaries
-- Company research reports
 - Document extraction (rate filings, etc.)
 :::
 :::
@@ -540,6 +591,7 @@ Screenshot of app
 ## Contact Info
 <br>
 
-- [Presentation GitHub repo](https://github.com/problemofpoints/ai-agents-cas-spring25)
+- This presentation: [https://ai-agents-cas-spring25.netlify.app/](https://ai-agents-cas-spring25.netlify.app/)
+- <i class="fa-brands fa-github"></i> [Presentation GitHub repo](https://github.com/problemofpoints/ai-agents-cas-spring25)
 - Link to app
-- [App GitHub repo](https://github.com/problemofpoints/chainladder-python-agent)
+- <i class="fa-brands fa-github"></i> [Chainladder agent GitHub repo](https://github.com/problemofpoints/chainladder-python-agent)
