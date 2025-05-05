@@ -11,11 +11,23 @@ author: "Adam Troyer, Lockton Re"
 ## Agenda
 <br>
 
+
+:::: {.columns}
+::: {.column}
 :::{.incremental}
 - 2025: Year of the Agent
 - What is an Agent?
 - Actuarial Example: Reserving Agent
 :::
+:::
+
+:::{.column}
+:::{.fragment}
+#### Presentation QR code:
+![](images/website-qr-code.png){.fragment .fade-in}
+:::
+:::
+::::
 
 ## 2025: Year of the Agent
 
@@ -138,6 +150,15 @@ March 4, 2025
 
 ---
 
+## Why do we need agents?
+<br>
+
+::: {.shadow-box style="width: 100%; margin: 0 auto;"}
+![](images/llm-slide-7.png){.current-visible}
+:::
+
+---
+
 ## OpenAI definition 
 
 <br>
@@ -204,18 +225,20 @@ chatbots, single-turn LLMs, or sentiment classifiers—are not agents.
 ## What is an ~~agent~~ agentic system?
 ### My definition - in scribbles
 
-:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+::: {.shadow-box style="width: 80%; margin: 0 auto;"}
 ![](images/Agent-9.png){.border .rounded}
-::::
+:::
 
 ---
 
 ## Multi-agent systems
 <br>
 
-:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+::: {.fragment}
+::: {.shadow-box style="width: 80%; margin: 0 auto;"}
 ![](images/Multi-agent.png){.border .rounded}
-::::
+:::
+:::
 
 ---
 
@@ -347,6 +370,8 @@ for step in agent.stream({"messages": [{"role": "user", "content": user_input}]}
   allow="autoplay; fullscreen; picture-in-picture"
   allowfullscreen>
 </iframe>
+
+[OpenAI Deep Research video →](https://player.vimeo.com/video/1052827364?h=da223fbb4f&keyboard=0&title=0&byline=0&portrait=0)
 :::
 :::
 ::::
@@ -385,6 +410,8 @@ for step in agent.stream({"messages": [{"role": "user", "content": user_input}]}
   allow="autoplay; fullscreen; picture-in-picture"
   allowfullscreen>
 </iframe>
+
+[OpenAI o3 video →](https://player.vimeo.com/video/1076103584?h=72021e4db7&keyboard=0&title=0&byline=0&portrait=0)
 :::
 :::
 ::::
@@ -430,14 +457,14 @@ response_actual = cl.Chainladder().fit(triangle)
 :::: {.columns}
 ::: {.column width="50%"}
 :::{.fragment}
-### OpenAI's gpt-4o
+### **OpenAI's gpt-4o**
 `{python} response_old['messages'][1].content`
 :::
 
 <br>
 
 :::{.fragment}
-### OpenAI's gpt-4.1
+### **OpenAI's gpt-4.1**
 `{python} response_new['messages'][1].content`
 :::
 
@@ -446,7 +473,7 @@ response_actual = cl.Chainladder().fit(triangle)
 
 ::: {.column width="50%"}
 :::{.fragment}
-### python-chainladder
+### **python-chainladder**
 `{python} f"${int(response_actual.ibnr_.sum()):,}"`
 :::
 
@@ -454,7 +481,7 @@ response_actual = cl.Chainladder().fit(triangle)
 <br>
 
 :::{.fragment}
-### OpenAI's o3
+### **OpenAI's o3**
 Gets the correct answer, but takes ~40 seconds
 :::
 :::
@@ -473,20 +500,20 @@ A thin AI Agent on top of the Chainladder Python package. Proof of concept.
 :::: {.columns}
 ::: {.column width="50%"}
 :::{.fragment}
-### Toolkit
+### **Toolkit**
 :::{.incremental}
+- ['Vibe coded' with help of Windsurf](https://windsurf.com/editor)
 - [Chainladder package](https://chainladder-python.readthedocs.io/en/latest/)
 - [Langgraph framework](https://langgraph.dev/)
     - [Langgraph supervisor](https://github.com/langchain-ai/langgraph-supervisor-py)
 - [Gradio for the UI](https://www.gradio.app)
-- [Coded with help of Windsurf](https://windsurf.com/editor)
 :::
 :::
 :::
 
 ::: {.column width="50%"}
 :::{.fragment}
-### Functionality
+### **Functionality**
 :::{.incremental}
 - Perform checks on triangle data
 - Apply available reserving methods
@@ -502,25 +529,63 @@ A thin AI Agent on top of the Chainladder Python package. Proof of concept.
 ## Agent structure
 <br>
 
-:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
-![](images/Multi-agent.png){.border .rounded}
-::::
+:::{.fragment}
+::: {.shadow-box style="width: 100%; margin: 0 auto;"}
+![](images/reserving-agent-structure.png){.border .rounded}
+:::
+:::
+
+---
+
+## Agent structure
+
+:::{.fragment}
+```python
+# Create supervisor workflow
+workflow = create_supervisor(
+    [data_agent, analysis_agent, visualization_agent, explanation_agent],
+    model=model,
+    prompt="""You are an actuarial analysis supervisor managing a team of specialized agents.
+    
+    Your team consists of:
+    
+    1. DATA AGENT: Specialized in loading and preparing triangle data
+        - Use for exploring available triangles, loading sample data, and validating data
+        - Also handles format conversions (cumulative/incremental) and grain changes
+    
+    2. ANALYSIS AGENT: Specialized in actuarial analysis methods
+        - Use for development factor calculations, tail methods, and IBNR calculations
+        - Handles methods like Chain Ladder, Bornhuetter-Ferguson, and stochastic approaches
+    
+    ...
+    
+    Your job is to:
+    - Understand the user's request and break it down into steps
+    - Delegate tasks to the appropriate specialized agent based on their expertise
+
+    ...
+    
+    When working on a new analysis:
+    1. First use the data agent to explore and validate appropriate triangle data
+    2. Then use analysis agent to perform the requested actuarial analyses
+    3. Use visualization agent to create relevant plots
+    4. Finally use explanation agent to generate reports or explain results
+    
+    Always be goal-oriented and efficient in your delegation.
+    """
+)
+```
+:::
 
 ---
 
 ## Reserving Agent in Action
 
-:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
-![](images/Multi-agent.png){.border .rounded}
-::::
-
----
-
-## Reserving Agent in Action (2)
-
-:::: {.shadow-box style="width: 80%; margin: 0 auto;"}
-![](images/Multi-agent.png){.border .rounded}
-::::
+:::{.fragment}
+::: {.shadow-box style="width: 80%; margin: 0 auto;"}
+![](images/chainladder-ai-demo.gif){.border .rounded}
+:::
+:::
 
 # Final Thoughts {background-color="black" background-image='images/locktonre-divider-slide.png' background-size="cover" background-position="center" footer=false}
 
@@ -530,7 +595,7 @@ A thin AI Agent on top of the Chainladder Python package. Proof of concept.
 :::: {.columns}
 ::: {.column width="50%"}
 :::{.fragment}
-### Present
+### **Present**
 :::{.incremental}
 - Coding (Windsurf)
 - Research reports (OpenAI Deep Research, GPTResearcher)
@@ -543,11 +608,11 @@ A thin AI Agent on top of the Chainladder Python package. Proof of concept.
 
 ::: {.column width="50%"}
 :::{.fragment}
-### Future
+### **Future**
 :::{.incremental}
-- Reinsurance experience / exposure analysis
-- Reinsurance structuring
-- Automated workflows
+- Smart automation of workflows (e.g. reinsurance structuring)
+- Slide generation, report creation
+- Almost everything...
 :::
 :::
 :::
@@ -593,5 +658,4 @@ A thin AI Agent on top of the Chainladder Python package. Proof of concept.
 
 - This presentation: [https://ai-agents-cas-spring25.netlify.app/](https://ai-agents-cas-spring25.netlify.app/)
 - <i class="fa-brands fa-github"></i> [Presentation GitHub repo](https://github.com/problemofpoints/ai-agents-cas-spring25)
-- Link to app
 - <i class="fa-brands fa-github"></i> [Chainladder agent GitHub repo](https://github.com/problemofpoints/chainladder-python-agent)

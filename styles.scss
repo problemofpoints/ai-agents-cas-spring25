@@ -43,8 +43,8 @@ $presentation-title-slide-text-align: left;
   --lockton-light-gray: #{$lockton-light-gray};
 }
 
-// Set h3 headers to use Lockton dark gray color
-.reveal h3 {
-  color: $lockton-dark-gray;
+// Set h3 and h4 headers to use black color
+.reveal h3, .reveal h4 {
+  color: black;
   font-weight: 500;
 }
